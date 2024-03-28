@@ -1,3 +1,5 @@
+using System.Collections;
+
 public class ArraysAndHashing
 {
     public static bool ContainsDuplicate(int[] nums)
@@ -50,5 +52,28 @@ public class ArraysAndHashing
         }
 
         return null;
+    }
+
+    public static IList<IList<string>> GroupAnagrams(string[] strs)
+    {
+       var data = new Dictionary<string, List<string>>();
+
+        foreach (var item in strs) {
+
+            var str = item.ToCharArray();
+            Array.Sort(str);
+
+            if(!data.ContainsKey(new string(str)))
+                data.Add(new string(str), new List<string>());
+
+            data[new string(str)].Add(item);
+        }
+
+        var result = new List<IList<string>>();
+
+        foreach (List<string> list in data.Values)
+            result.Add(list.Cast<string>().ToList().AsReadOnly());
+
+        return result;
     }
 }
