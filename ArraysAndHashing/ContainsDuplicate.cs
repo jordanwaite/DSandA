@@ -32,4 +32,23 @@ public class ArraysAndHashing
 
         return true;
     }
+
+    public static int[] TwoSum(int[] nums, int target)
+    {
+
+        // loop through nums, if current num - target already existed, true
+
+        Dictionary<int, int> map = new();
+        int difference;
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            difference = target - nums[i];
+            if (map.ContainsKey(difference))
+                return [map[difference], i];
+            map.Add(nums[i], i);
+        }
+
+        return null;
+    }
 }
