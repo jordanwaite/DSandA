@@ -9,14 +9,14 @@ int targetNum = 5;
 
 string[] strs = ["eat", "tea", "tan", "ate", "nat", "bat"];
 
+BigOTypes[] allTypes = { BigOTypes.BRUTE_FORCE, BigOTypes.OKAY, BigOTypes.BEST };
 
+foreach (BigOTypes type in allTypes)
+{
+    Console.WriteLine(ArraysAndHashing.ContainsDuplicate(numArrayNoDupes, type));
+    Console.WriteLine(ArraysAndHashing.ContainsDuplicate(numArrayDupes, type));
+}
 
-Console.WriteLine(ArraysAndHashing.ContainsDuplicate(numArrayNoDupes, BigOTypes.BRUTE_FORCE));
-Console.WriteLine(ArraysAndHashing.ContainsDuplicate(numArrayNoDupes, BigOTypes.OKAY));
-Console.WriteLine(ArraysAndHashing.ContainsDuplicate(numArrayNoDupes, BigOTypes.BEST));
-Console.WriteLine(ArraysAndHashing.ContainsDuplicate(numArrayDupes, BigOTypes.BRUTE_FORCE));
-Console.WriteLine(ArraysAndHashing.ContainsDuplicate(numArrayDupes, BigOTypes.OKAY));
-Console.WriteLine(ArraysAndHashing.ContainsDuplicate(numArrayDupes, BigOTypes.BEST));
 Console.WriteLine();
 
 Console.WriteLine($"The two strings are anagrams: {ArraysAndHashing.IsAnagram(cat, tac)}");
