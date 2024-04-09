@@ -12,9 +12,12 @@ string[] strs = ["eat", "tea", "tan", "ate", "nat", "bat"];
 
 
 Console.WriteLine(ArraysAndHashing.ContainsDuplicate(numArrayNoDupes, BigOTypes.BRUTE_FORCE));
+Console.WriteLine(ArraysAndHashing.ContainsDuplicate(numArrayNoDupes, BigOTypes.OKAY));
 Console.WriteLine(ArraysAndHashing.ContainsDuplicate(numArrayNoDupes, BigOTypes.BEST));
 Console.WriteLine(ArraysAndHashing.ContainsDuplicate(numArrayDupes, BigOTypes.BRUTE_FORCE));
+Console.WriteLine(ArraysAndHashing.ContainsDuplicate(numArrayDupes, BigOTypes.OKAY));
 Console.WriteLine(ArraysAndHashing.ContainsDuplicate(numArrayDupes, BigOTypes.BEST));
+Console.WriteLine();
 
 Console.WriteLine($"The two strings are anagrams: {ArraysAndHashing.IsAnagram(cat, tac)}");
 Console.WriteLine($"The two strings are anagrams: {ArraysAndHashing.IsAnagram(cat, tac + tac)}");

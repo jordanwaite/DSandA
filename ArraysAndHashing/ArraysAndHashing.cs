@@ -19,16 +19,20 @@ public class ArraysAndHashing
                 return false;
 
             case BigOTypes.OKAY:
+                Console.Write("Okay time of contains duplicate O(log(n)): ");
+                Array.Sort(nums);
+                for (int i = 1; i < nums.Length; i++)
+                {
+                    if (nums[i] == nums[i - 1])
+                        return true;
+                }
+                return false;
 
             default:
                 Console.Write("Fastest time of contains duplicate O(n): ");
                 HashSet<int> set = new(nums);
                 return set.Count != nums.Length;
         }
-
-
-
-
     }
 
     public static bool IsAnagram(string s, string t)
