@@ -2,11 +2,32 @@ using System.Collections;
 
 public class ArraysAndHashing
 {
-    public static bool ContainsDuplicate(int[] nums)
+    public static bool ContainsDuplicate(int[] nums, String bigO = "brute")
     {
-        HashSet<int> set = new(nums);
+        switch (bigO)
+        {
+            case "brute":
+            Console.Write("Brute force of contains duplicate O(n^2): ");
+                for (int i = 0; i < nums.Length; i++)
+                {
+                    for (int j = 1; j < nums.Length; j++)
+                    {
+                        if (nums[i] == nums[j])
+                            return true;
+                    }
+                }
+                return false;
 
-        return set.Count != nums.Length;
+            case "okay":
+
+            default:
+                HashSet<int> set = new(nums);
+                return set.Count != nums.Length;
+        }
+
+
+
+
     }
 
     public static bool IsAnagram(string s, string t)
@@ -56,14 +77,15 @@ public class ArraysAndHashing
 
     public static IList<IList<string>> GroupAnagrams(string[] strs)
     {
-       var data = new Dictionary<string, List<string>>();
+        var data = new Dictionary<string, List<string>>();
 
-        foreach (var item in strs) {
+        foreach (var item in strs)
+        {
 
             var str = item.ToCharArray();
             Array.Sort(str);
 
-            if(!data.ContainsKey(new string(str)))
+            if (!data.ContainsKey(new string(str)))
                 data.Add(new string(str), new List<string>());
 
             data[new string(str)].Add(item);

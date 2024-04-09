@@ -11,7 +11,7 @@ string[] strs = ["eat","tea","tan","ate","nat","bat"];
 
 
 
-Console.WriteLine($"The int array contains duplicate numbers: {ArraysAndHashing.ContainsDuplicate(numArrayNoDupes)}");
+ArraysAndHashing.ContainsDuplicate(numArrayNoDupes, "brute");
 Console.WriteLine($"The int array contains duplicate numbers: {ArraysAndHashing.ContainsDuplicate(numArrayDupes)}");
 
 Console.WriteLine($"The two strings are anagrams: {ArraysAndHashing.IsAnagram(cat, tac)}");
