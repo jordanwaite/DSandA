@@ -2,7 +2,23 @@ using System.Collections;
 
 public class ArraysAndHashing
 {
-    public static bool ContainsDuplicate(int[] nums, BigOTypes bigOTypes)
+    private static BigOTypes[] allTypes = { BigOTypes.BRUTE_FORCE, BigOTypes.OKAY, BigOTypes.BEST };
+
+    public static void RunContainsDuplicate()
+    {
+
+        int[] numArrayNoDupes = [1, 2, 3, 4, 5];
+        int[] numArrayDupes = [1, 2, 3, 4, 1];
+        Console.WriteLine("-------- RUNNING CONTAINS DUPLICATES -------");
+        foreach (BigOTypes type in allTypes)
+        {
+            Console.WriteLine(ContainsDuplicate(numArrayNoDupes, type));
+            Console.WriteLine(ContainsDuplicate(numArrayDupes, type));
+        }
+        Console.WriteLine("------- END OF CONTAINS DUPLICATES -------");
+    }
+
+    private static bool ContainsDuplicate(int[] nums, BigOTypes bigOTypes)
     {
         switch (bigOTypes)
         {
