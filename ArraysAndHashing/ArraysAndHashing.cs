@@ -35,7 +35,7 @@ public class ArraysAndHashing
         return true;
     }
 
-    public static int[] TwoSum(int[] nums, int target)
+    public static int[]? TwoSum(int[] nums, int target)
     {
 
         // loop through nums, if current num - target already existed, true
