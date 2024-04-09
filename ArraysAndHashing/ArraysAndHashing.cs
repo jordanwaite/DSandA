@@ -2,15 +2,15 @@ using System.Collections;
 
 public class ArraysAndHashing
 {
-    public static bool ContainsDuplicate(int[] nums, String bigO = "brute")
+    public static bool ContainsDuplicate(int[] nums, BigOTypes bigOTypes)
     {
-        switch (bigO)
+        switch (bigOTypes)
         {
-            case "brute":
-            Console.Write("Brute force of contains duplicate O(n^2): ");
+            case BigOTypes.BRUTE_FORCE:
+                Console.Write("Brute force of contains duplicate O(n^2): ");
                 for (int i = 0; i < nums.Length; i++)
                 {
-                    for (int j = 1; j < nums.Length; j++)
+                    for (int j = i + 1; j < nums.Length; j++)
                     {
                         if (nums[i] == nums[j])
                             return true;
@@ -18,9 +18,10 @@ public class ArraysAndHashing
                 }
                 return false;
 
-            case "okay":
+            case BigOTypes.OKAY:
 
             default:
+                Console.Write("Fastest time of contains duplicate O(n): ");
                 HashSet<int> set = new(nums);
                 return set.Count != nums.Length;
         }

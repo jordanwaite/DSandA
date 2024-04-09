@@ -7,12 +7,14 @@ string tac = "tac";
 
 int targetNum = 5;
 
-string[] strs = ["eat","tea","tan","ate","nat","bat"];
+string[] strs = ["eat", "tea", "tan", "ate", "nat", "bat"];
 
 
 
-ArraysAndHashing.ContainsDuplicate(numArrayNoDupes, "brute");
-Console.WriteLine($"The int array contains duplicate numbers: {ArraysAndHashing.ContainsDuplicate(numArrayDupes)}");
+Console.WriteLine(ArraysAndHashing.ContainsDuplicate(numArrayNoDupes, BigOTypes.BRUTE_FORCE));
+Console.WriteLine(ArraysAndHashing.ContainsDuplicate(numArrayNoDupes, BigOTypes.BEST));
+Console.WriteLine(ArraysAndHashing.ContainsDuplicate(numArrayDupes, BigOTypes.BRUTE_FORCE));
+Console.WriteLine(ArraysAndHashing.ContainsDuplicate(numArrayDupes, BigOTypes.BEST));
 
 Console.WriteLine($"The two strings are anagrams: {ArraysAndHashing.IsAnagram(cat, tac)}");
 Console.WriteLine($"The two strings are anagrams: {ArraysAndHashing.IsAnagram(cat, tac + tac)}");
